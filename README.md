@@ -590,3 +590,325 @@ java/io/PrintStreamprintln(Ljava/lang/String;)TestJavaCodeLineNumberTablemain([L
 ```java
 java TestJava
 ```
+
+---
+
+# Estruturas de Controle (Condicional)
+
+```text
+// if(...) sentença; ou {}
+// while(...) sentença; ou {}
+// for(..., ..., ...) sentença; ou {}
+// do {} while(); // a única que termina com ;
+```
+
+## If
+
+`Pegadinha`
+```java
+package controle;
+
+public class DesafioIf {
+
+	public static void main(String[] args) {
+
+		double nota = 1.3;
+
+		// não usar ;  em estruturas de controle (tem um exceção)
+		if (nota >= 9.0); {
+			System.out.println("Quadro de Honra!");
+			System.out.println("Você é fera!!!");
+		}
+	}
+}
+```
+
+### Repare que a próxima linha é o ; que é válida:
+
+```java
+if (nota >= 9.0)
+
+; // Caso a condição seja verdadeira, esse é o resultado apresentado e segue o código
+
+{
+    System.out.println("Quadro de Honra!");
+    System.out.println("Você é fera!!!");
+}
+```
+## While (Pode ser executado 0 ou n vezes)
+Você pode executar uma condição de forma indeterminada, caso queira.
+
+## Do While (Você escreve de 1 ou n vezes)
+
+```java
+package controle;
+
+import java.util.Scanner;
+
+public class DoWhile {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+
+		String texto = "";
+		
+		do {
+			System.out.println("Você precisa falar as palavras mágicas...");
+			System.out.print("Quer sair? ");
+			texto = entrada.nextLine();
+		} while(!texto.equalsIgnoreCase("por favor"));
+
+		
+		System.out.println("Obrigado!");
+		entrada.close();
+	}
+}
+```
+
+# For alinhado
+```java
+package controle;
+
+public class For3 {
+
+	public static void main(String[] args) {
+		
+		for(int i = 0; i < 10; i++) {
+			for(int j = 0; j < 10; j++) { // executa 9 vezes, incrementa o i e executa mais 9 vezes.
+				System.out.printf("[%d %d]", i, j);
+			}
+			System.out.println();
+		}
+	}
+}
+```
+
+# Desafio do For
+Na segunda parte do código, você trabalha o for, sem o controle númerico.
+```java
+package controle;
+
+public class DesafioFor {
+
+	public static void main(String[] args) {
+		
+		String valor = "#";
+		for(int i = 1; i <= 5; i++) {
+			System.out.println(valor);
+			valor += "#";
+		}
+		
+		// Versão do desafio
+		// Não pode usar valor numérico pra controlar o laço!
+		
+		for(String v = "#"; !v.equals("######"); v += "#") {
+			System.out.println(v);
+		}
+	}
+}
+```
+---
+# Switch
+## Switch sem o break 
+Caso entre no primeiro Case, ele executa os demais
+
+```java
+package controle;
+
+public class SwitchSemBreak {
+
+	public static void main(String[] args) {
+
+		String faixa = "marrom";
+
+		switch (faixa.toLowerCase()) {
+		case "preta":
+			System.out.println("Sei o Bassai-Dai...");
+		case "marrom":
+			System.out.println("Sei o Tekki Shodan");
+		case "roxa":
+			System.out.println("Sei o Heian Godan");
+		case "verde":
+			System.out.println("Sei o Heian Yodan");
+		case "laranja":
+			System.out.println("Sei o Heian Sandan");
+		case "vermelha":
+			System.out.println("Sei o Heian Nidan");
+		case "amarela":
+			System.out.println("Sei o Heian Shodan");
+			break;
+		default:
+			System.out.println("Não sei nada");
+		}
+
+		System.out.println("Fim!");
+		
+		int idade = 2;
+		
+		switch (idade) {
+		case 3:
+			System.out.println("Sabe programar");
+		case 2:
+			System.out.println("Sabe falar");
+		case 1:
+			System.out.println("Sabe andar");
+		case 0:
+			System.out.println("Sabe respirar");
+		}
+	}
+}
+
+```
+
+## Switch com o Break
+```java
+package controle;
+
+import java.util.Scanner;
+
+public class SwitchComBreak {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		String conceito = "";
+		System.out.print("Informe a nota: ");
+		int nota = entrada.nextInt();
+		
+		switch(nota) {
+		case 10: case 9: 
+			conceito = "A";
+			break;
+		case 8: case 7: {
+			conceito = "B";
+			break;
+		}
+		case 6:
+		case 5:
+			conceito = "C";
+			break;
+		case 4:
+		case 3:
+			conceito = "D";
+			break;
+		case 2: case 1: case 0:
+			conceito = "E";
+			break;
+		default:
+			conceito = "não encontrado!";
+//			break;
+		}
+		
+		System.out.println("Conceito é " + conceito);
+		entrada.close();
+	}
+}
+```
+`Break` e `Continue` são palavras reservadas no java.
+ - Break quebra o fluxo natural da execução.
+  
+```java
+package controle;
+
+public class Break {
+
+	public static void main(String[] args) {
+		
+		for (int i = 0; i < 10; i++) {
+			
+			if(i == 5) {
+				break; // Quebra o fluxo, sai da estrutura condicional
+			}
+			
+			System.out.println(i);
+		}
+		
+		System.out.println("Fim!");
+	}
+}
+
+```
+
+## Continue
+O Continue interrompe apenas aquela execução e vai para a próxima, sem sair
+da estrutura de controle.
+
+```java
+package controle;
+
+public class Continue {
+
+	public static void main(String[] args) {
+		
+		for (int i = 0; i < 10; i++) {
+			if(i % 2 == 1) {
+				continue; // se o número for ímpar, volta para o for. (Interrompe apenas, aquela execução)
+			}
+			
+			System.out.println(i); // Imprimir apenas números pares
+		}
+
+		for (int i = 1; i <= 10; i++) {
+			if(i == 5) continue;			
+			System.out.println(i);
+		}
+	}
+}
+```
+
+## Break Rotulado (Cuidado com a utilização)
+Você pode rotular o for mais externo e chamar, quando necessário.
+
+```java
+package controle;
+
+public class BreakRotulado {
+
+	public static void main(String[] args) {
+		
+		externo:
+		for (int i = 0; i < 3; i++) {
+			interno: for (int j = 0; j < 3; j++) {
+				if(i == 1) {
+					break externo; // Sai do for mais externo
+				}
+				System.out.printf("[%d %d] ", i, j);
+			}
+			System.out.println();
+		}
+	
+		System.out.println("Fim!");
+	}
+}
+
+```
+
+## Continue Rotulado
+
+```java
+package controle;
+
+public class ContinueRotulado {
+public static void main(String[] args) {
+		
+		externo:
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if(i == 1) {
+					continue externo; //Continue do externo
+				}
+				System.out.printf("[%d %d] ", i, j);
+			}
+			System.out.println();
+		}
+	
+		System.out.println("Fim!");
+	}
+}
+
+```
+
+---
+# Classes e Métodos
