@@ -912,3 +912,445 @@ public static void main(String[] args) {
 
 ---
 # Classes e Métodos
+
+O nome da Classe java, precisa ter o mesmo nome do arquivo.
+É possível ter mais de uma classe dentro de um arquivo.
+
+`Uma classe define um bloco de código`
+
+O ideal, é que tenha apenas um método main em um arquivo java, ou seja, ele é
+a única porta de entrada.
+
+## Classes vs Objetos
+
+### Anatomia de uma classe Java
+`A primeira letra Maíuscula e as seguintes maíusculas também. Ex. PessoaFisica`
+```java
+ class Nome ... (Variações) {
+     // Corpo
+ }
+```
+Antes da palavra reservada `class`, você pode ter outros modificadores.
+
+ - Corpo da classe (`Membros da Classe`): Existem atribuitos e comportamentos.
+
+Exemplo: 
+### Características do Carro: 
+  - Cor
+  - Modelo
+### Comportamento
+  - Ligar
+  - Acelerar
+
+----
+Classe define um `TIPO (Personalizado seu)` (**Estrutura de dados**). `Uma classe é uma estrutura de dados`.
+
+```text
+A Classe representa uma `Abstração` (Simplificação).
+```
+Exemplo: 
+ Você pode ter uma classe Produto.java, que pode ser utilizado
+ em uma mercearia e um de uma grande redes. O que muda, talvez, seja, a quantidade de atributos (Ex. Localização, Impostos e etc)
+ 
+ **Objeto == Instâncias**;
+
+ `Acabei de instanciar 10 objetos do tipo Produto.`
+
+## Relação Classe e Objeto
+
+ - Classe: Planta Baixa (Molde)
+ - Casa Construída - Instância (Valor dos atributos podem mudar, porém a estrutura permanece igual)
+ - Casa Construída - Instância (Valor dos atributos podem mudar, porém a estrutura permanece igual)
+
+`A partir de um único Molde (Classe), você pode construir vários objetos (Instâncias)`.
+
+### Exemplo
+```text
+Produto 
+  - Nome
+  - Preço
+  - Desconto
+
+  Produto 1
+  - Notebook
+  - R$ 4.500
+  - 15%
+
+  Produto 2
+  - Celular
+  - R$ 1.800
+  - 10%
+```
+**O `construtor` é um `método especial` que `cria` os `objetos`;**
+
+---
+
+# Membros de uma Classe
+```text
+ - Classe
+    - Variáveis/Constante
+    - Construtor(es)
+    - Métodos
+    - Classes
+```
+`Static` - atributo ou método pertence a classe.
+
+`System.out.print` - A notação . é forma para acessar os membros de um objeto ou de uma classe.
+
+----
+
+## Método
+Método é o comportamento da classe. (Ex. Você poderia ter um método para retornar o produto com desconto).
+
+No método você tem uma sequência de passos, que pode ter condicionais ou não e pode gerar um resultado.
+
+### Anatomia do Método
+ - Convenção: nomeMetodo (Pascal Case ou Camel Case)
+
+### Método sem retorno
+```java
+// Ausência de retorno
+void nomeMetodo() {
+    // corpo
+}
+```
+
+### Método dois parâmetros e retorno
+```java
+// Ausência de retorno
+int nomeMetodo(int a, int b) {
+    // corpo
+    return a + b;
+}
+```
+---
+
+# Construtor(es)
+ Criam novos objetos a partir de uma classe. O nome da classe e o nome do constutor são iguais.
+
+
+  💡 - O construtor padrão é fornecido por padrão. Caso você crie outro construtor, ele anula o construtor padrão. Caso queira, é necessário criar um construtor sem parâmetros. 
+  - Método não tem retorno (ausência de retorno)
+  - O retorno é do tipo da Classe
+  - Colocando void, ele vira um método
+
+### Utilizando o construtor padrão.
+```java
+Produto produto = new Produto();
+
+Produto produto = new Produto("laptop");
+```
+
+---
+# Membros de classe vs Instância #01
+
+Exemplo:
+
+Quando você cria uma nova instância, utilizando `new`, significa , que você vai criar uma instância, por sua vez, a Instância ter espaços para alocar os valores de cada variável. (Atributo de Instância ou atributo de objeto).
+
+```java
+class Data {
+    int dia;
+    int mes;
+    int ano;
+}
+```
+# Atributo de classe `static`
+No momento em que você utiliza a palavra `static`, diz que o valor será associado a classe. Isso significa, que o dia estará associado a classe, enquanto que o mês e o ano, estarão associado a instância. Caso altere, ele vale para todas instâncias.
+```java
+class Data {
+    int static dia = 3;
+    int mes;
+    int ano;
+}
+```
+### Exemplo 2 - Atributo de Classe
+```java
+class Math {
+    static double PI = 3.14;
+}
+
+...
+System.out.print(Math.PI)
+...
+```
+## Membro de Instância e membro de instância
+
+Nesse trecho de código, ele é constante `final` e static já que está associado a classe.
+
+💡 - Por convenção a constante fica com letra maíuscula.
+
+```java
+final static double PI = 3.1415;
+```
+
+### Método estático
+```java
+static double area(double raio) {
+    return PI * Math.pow(raio, 2);		
+}
+
+//Utilização
+...
+System.out.print(AreaCirc.area(2.2, 3.8)); 
+```
+
+```java
+package classe;
+
+public class AreaCirc {
+
+	double raio;
+	final static double PI = 3.1415;
+	
+	AreaCirc(double raioInicial) {
+		raio = raioInicial;
+	}
+	
+	double area() {
+		return PI * Math.pow(raio, 2);
+	}
+	
+	static double area(double raio) {
+		return PI * Math.pow(raio, 2);		
+	}
+}
+```
+---
+
+# Atribuição por valor vs Atribuição por referência
+
+💡 - *Atribuição por valor: `Tipos primitivos`*;
+💡 - *Atribuição por referência: `Objetos`*
+
+## Atribuição por valor
+```java
+int a = 2;
+int b = a;
+```
+Na memória vai existir: 
+
+Memória | Valor 
+--- | --- |
+a | `2`
+b | `2`
+** Ou seja, é cada variável tem uma cópia do valor **
+
+-----
+
+## Atribuição por valor
+```java
+Data d1 = new Data();
+Data d2 = 3;
+int b = a;
+```
+Na memória vai existir: 
+
+Memória | Valor 
+--- | --- |
+d1 | `0x123`
+d2 | `0x123`
+valor `0x123` | `3`
+
+** Ou seja, tem uma atribuição do endereço, mesmo objeto na memória **
+
+Se criar um novo objeto, ele não aponta mais para o endereço de memória antiga.
+===
+💡 - *Quando um objeto não é mais referênciado, entra em ação o `Garbage Collector`, que vai excluir da memória;*
+===
+
+Existe um método chamado `clone()`, já que ele gera uma cópia exata daquele objeto.
+
+Cuidado com os métodos que alterem as referências do objeto;
+
+### Exemplo 
+```java
+package classe;
+
+public class ValorVsReferencia {
+
+	public static void main(String[] args) {
+		
+		double a = 2;
+		double b = a; // atribuição por valor (Tipo primitivo)
+		
+		a++;
+		b--;
+		
+		System.out.println(a + " " + b);
+		
+		Data d1 = new Data(1, 6, 2022);
+		Data d2 = d1; // atribuição por referência (Objeto)
+		
+		d1.dia = 31;
+		d2.mes = 12;
+		
+		d1.ano = 2025;
+		
+		System.out.println(d1.obterDataFormatada());
+		System.out.println(d2.obterDataFormatada());
+		
+		voltarDataParaValorPadrao(d1);
+		
+		System.out.println(d1.obterDataFormatada());
+		System.out.println(d2.obterDataFormatada());
+		
+		int c = 5;
+		alterarPrimitivo(c);
+		System.out.println(c);
+	}
+	
+	static void voltarDataParaValorPadrao(Data d) {
+		d.dia = 1;
+		d.mes = 1;
+		d.ano = 1970;
+	}
+	
+	static void alterarPrimitivo(int c) {
+		c++;
+	}
+}
+
+```
+
+---
+
+# Desafio
+
+Ao executar esse código dá erro 
+Exception in thread "main" 
+
+```java
+package classe;
+
+public class PrimeiroTrauma {
+
+	int a = 3;
+
+	public static void main(String[] args) {
+		System.out.println(a);
+	}
+}
+
+```
+
+# Resultado do Desafio
+===
+💡 - *Para resolver é necessário criar uma instância da classe PrimeiroTrauma. `Você só consegue acessar um membro de classe, se criar uma instância.`*
+Não consegue acessar uma variável de instância a partir de um método estático.
+Você pode mudar a variável para `static`, ai você pode acessar em um método estático.
+
+===
+
+
+```java
+package classe;
+
+public class PrimeiroTrauma {
+
+	int a = 3;
+	static int b = 4;
+
+	public static void main(String[] args) {
+		
+		PrimeiroTrauma p = new PrimeiroTrauma();
+		System.out.println(p.a);
+		
+		System.out.println(b);
+	}
+}
+
+```
+---
+
+# This e This()
+
+Sempre que você quiser acessar uma variável que pertence a instância, você utilizar o `this.nomeVariavel`. Com o this você referencia o objeto atual.
+
+💡 - **O `método estático é associado` a `classe` e o `this` é `associado` a uma `instância`.**
+
+
+💡 - **Com um método estático, você não pode chamar o `this`**
+```java
+// Funciona
+void imprimirDataFormatada() {
+    this.dia = 3;
+}
+```
+
+```java
+// ERRO, não compila
+static void teste() {
+    this.dia = 3;
+}
+```
+
+
+```java
+public class Produto {
+    String nome;
+
+    Produto(String nome) {
+        this.nome = nome; //this.nome pertence a instância
+    }
+}
+```
+
+### This() chamando outro construtor ou pode ser um outro método
+💡 - **Não pode chamar um construtor pelo `this`, dentro de um método;**
+```java
+public class Produto {
+    String nome;
+
+    Produto() {
+        this("Videogame");
+    }
+
+    Produto(String nome) {
+        this.nome = nome; //this.nome pertence a instância
+    }
+}
+```
+---
+
+# Variáveis locais
+Quando uma variável é definida dentro do método, ou seja, a visibilidade da variável é apenas dentro do método. Se quiser, você pode definir como `final`, ou seja, ela terá um valor constante.
+
+Os valores da assinatura de um método, são visíveis apenas.
+
+# Valores Padrão
+```java
+ byte, short, int, long -> 0;
+ float, double -> 0.0;
+ boolean -> false;
+ char -> '/u0000';
+ //Objetos -> null;
+ //String s = null;
+```
+💡 - **Variáveis locais não são inicializadas por padrão.**
+
+💡 - **Variáveis definidas dentro do corpo da classe, serão inicializadas por padrão.**
+
+💡 - **Objetos inicializados são inicializados nulo, ou seja, não aponta para nenhum objeto de memória**
+
+
+### No exemplo abaixo, o código não compila, o motivo é que as variáveis locais não foram inicializadas. Para funcionar, basta inicializar com um valor
+```java
+ int a; // variável local
+ System.out.println(a); //Erro: A variável local não é inicializada por padrão.
+```
+
+💡 - **Na String: Nulo é diferente de vazio, já que o valor vazio, possui um espaço na memória**
+
+### Quando você define uma constante ou na definição ou no construtor; caso contrário, o código estará errado. O Objeto não pode ser criado, sem com que a constante tenha um valor definido.
+
+```java
+static int x; //Inicia com valor zero, por padrão
+```
+---
+
+# Valor Nulo (Null) - Não aponta para nenhum local de memória
+Se o objeto estiver null, se você tentar chamar um método, vai ocorrer o NullPointerException; Esse erro, só vai ocorrer em tempo de execução --> RuntimeException;
+
+
+
