@@ -1,4 +1,4 @@
-package lambdas;
+package exercicios.src.lambdas;
 
 public class Trabalho1 implements Runnable {
 

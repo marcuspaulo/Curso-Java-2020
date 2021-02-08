@@ -1,4 +1,4 @@
-package fundamentos.operadores;
+package exercicios.src.fundamentos.operadores;
 
 public class DesafioLogicos {
 

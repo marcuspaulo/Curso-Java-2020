@@ -177,7 +177,7 @@ O objetivo do HashCode, ele separa os objetos que aparentemente são iguais e em
 💡 - **HashSet utiliza o HashCode para comparar objetos**
 
 ```java
-package classe;
+package exercicios.src.classe;
 
 public class Usuario {
 
@@ -206,7 +206,7 @@ public class Usuario {
 ```
 
 ```java
-package classe;
+package exercicios.src.classe;
 
 public class Equals {
 

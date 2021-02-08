@@ -1,3 +1,5 @@
+package fundamentos.src;
+
 /**
  * Recurso inferência introduzido no Java 10
  * Observação, uma vez associado o tipo, não é possível mudar

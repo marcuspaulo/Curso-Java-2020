@@ -1,4 +1,4 @@
-package fundamentos;
+package exercicios.src.fundamentos;
 
 public class Temperatura {
 

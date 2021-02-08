@@ -1,4 +1,4 @@
-package jdbc;
+package exercicios.src.jdbc;
 
 public class DAOTeste {
 

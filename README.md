@@ -1096,7 +1096,7 @@ System.out.print(AreaCirc.area(2.2, 3.8));
 ```
 
 ```java
-package classe;
+package exercicios.src.classe;
 
 public class AreaCirc {
 
@@ -1165,7 +1165,7 @@ Cuidado com os métodos que alterem as referências do objeto;
 
 ### Exemplo 
 ```java
-package classe;
+package exercicios.src.classe;
 
 public class ValorVsReferencia {
 
@@ -1221,7 +1221,7 @@ Ao executar esse código dá erro
 Exception in thread "main" 
 
 ```java
-package classe;
+package exercicios.src.classe;
 
 public class PrimeiroTrauma {
 
@@ -1244,7 +1244,7 @@ Você pode mudar a variável para `static`, ai você pode acessar em um método 
 
 
 ```java
-package classe;
+package exercicios.src.classe;
 
 public class PrimeiroTrauma {
 

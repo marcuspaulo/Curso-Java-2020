@@ -1,4 +1,4 @@
-package arrays;
+package exercicios.src.arrays;
 
 public class Foreach {
 

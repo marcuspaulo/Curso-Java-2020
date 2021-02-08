@@ -1,4 +1,4 @@
-package colecoes;
+package exercicios.src.colecoes;
 
 import java.util.LinkedList;
 import java.util.Queue;

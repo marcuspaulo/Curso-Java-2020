@@ -1,4 +1,4 @@
-package generics;
+package exercicios.src.generics;
 
 public class CaixaNumeroTeste {
 

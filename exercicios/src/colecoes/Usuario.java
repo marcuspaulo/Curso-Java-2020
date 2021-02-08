@@ -1,4 +1,4 @@
-package colecoes;
+package exercicios.src.colecoes;
 
 public class Usuario {
 

@@ -1,4 +1,4 @@
-package oo.composicao.desafio;
+package exercicios.src.oo.composicao.desafio;
 
 import java.util.ArrayList;
 import java.util.List;

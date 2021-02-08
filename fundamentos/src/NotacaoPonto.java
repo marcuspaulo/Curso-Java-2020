@@ -1,3 +1,5 @@
+package fundamentos.src;
+
 public class NotacaoPonto {
     public static void main(String[] args) {
 

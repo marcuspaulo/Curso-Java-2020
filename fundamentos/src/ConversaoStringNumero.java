@@ -1,3 +1,5 @@
+package fundamentos.src;
+
 import javax.swing.JOptionPane;
 
 public class ConversaoStringNumero {

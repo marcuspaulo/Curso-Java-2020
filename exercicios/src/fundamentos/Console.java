@@ -1,4 +1,4 @@
-package fundamentos;
+package exercicios.src.fundamentos;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package oo.abstrato;
+package exercicios.src.oo.abstrato;
 
 public class Cachorro extends Mamifero {
 	

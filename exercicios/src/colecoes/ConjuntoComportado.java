@@ -1,4 +1,4 @@
-package colecoes;
+package exercicios.src.colecoes;
 
 import java.util.HashSet;
 import java.util.Set;

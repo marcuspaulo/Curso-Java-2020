@@ -1,4 +1,4 @@
-package lambdas;
+package exercicios.src.lambdas;
 
 import java.util.function.UnaryOperator;
 

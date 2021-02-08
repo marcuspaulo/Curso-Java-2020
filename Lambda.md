@@ -240,7 +240,7 @@ public class Predicado {
 # Interface Consumer (aceita 1 parâmetro e não retorna nada)
 
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 import java.util.Arrays;
 import java.util.List;
@@ -275,7 +275,7 @@ public class Consumidor {
 Representa uma interface que aceita um único argumento e que produz um resultado
 
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 import java.util.function.Function;
 
@@ -312,7 +312,7 @@ public class Funcao {
 Interface Predicado recebe um parâmetro de entrada e retona verdadeiro ou falso;
 
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 import java.util.function.Predicate;
 
@@ -336,7 +336,7 @@ Não recebe nenhuma parâmetro e devolver alguma coisa
   - É uma interface mais simples
   - Não tem os operadores or and e etc. 
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 import java.util.Arrays;
 import java.util.List;
@@ -361,7 +361,7 @@ public class Fornecedor {
   - Compose executa de trás para frente (Sentido inverso)
 
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 import java.util.function.UnaryOperator;
 
@@ -400,7 +400,7 @@ BiFunction<Double, Double, String> resultado = (n1, n2) -> {
 ```
 
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
@@ -430,7 +430,7 @@ public class OperadorBinario {
 
 # Desafio Binary Operator
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
@@ -475,7 +475,7 @@ public class Desafio {
 
 Thread é um processo que pode se executado paralelamente;
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 public class Threads {
 
@@ -518,7 +518,7 @@ public class Threads {
 ```
 
 ```java
-package lambdas;
+package exercicios.src.lambdas;
 
 public class Trabalho1 implements Runnable {
 

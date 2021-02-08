@@ -1,3 +1,5 @@
+package fundamentos.src;
+
 import java.util.Scanner;
 
 public class Console {

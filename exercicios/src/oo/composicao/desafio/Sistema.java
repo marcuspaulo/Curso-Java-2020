@@ -1,4 +1,4 @@
-package oo.composicao.desafio;
+package exercicios.src.oo.composicao.desafio;
 
 public class Sistema {
 

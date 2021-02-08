@@ -1,3 +1,5 @@
+package fundamentos.src;
+
 /**
  * Conversão de temperatura
  * Formula: (ºF -32) * 5/9 = ºC

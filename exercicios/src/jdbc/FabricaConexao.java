@@ -1,4 +1,4 @@
-package jdbc;
+package exercicios.src.jdbc;
 
 import java.io.IOException;
 import java.sql.Connection;

@@ -1,4 +1,4 @@
-package arrays;
+package exercicios.src.arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;

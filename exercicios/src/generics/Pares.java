@@ -1,4 +1,4 @@
-package generics;
+package exercicios.src.generics;
 
 import java.util.LinkedHashSet;
 import java.util.Optional;
