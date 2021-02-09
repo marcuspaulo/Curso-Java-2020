@@ -3,6 +3,7 @@ package streamapi;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ImprimindoObjetos {
 
@@ -14,10 +15,14 @@ public class ImprimindoObjetos {
             System.out.println(nome);
         }
 
-        System.out.println("\n Usando o Iterator..");
+        System.out.println("\nUsando o Iterator..");
         Iterator<String> iterator = aprovados.iterator();
         while(iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+
+        System.out.println("\nUsando o Stream..");
+        Stream<String> streamAprovados = aprovados.stream();
+        streamAprovados.forEach(System.out::println); //Laço interno
     }
 }

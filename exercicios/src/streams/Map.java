@@ -20,9 +20,9 @@ public class Map {
 				
 		System.out.println("\n\nUsando composição...");
 		marcas.stream()
-			.map(Utilitarios.maiuscula)
+			.map(streams.Utilitarios.maiuscula)
 			.map(primeiraLetra)
-			.map(Utilitarios::grito)
+			.map(streams.Utilitarios::grito)
 			.forEach(print);
 	}
 }
